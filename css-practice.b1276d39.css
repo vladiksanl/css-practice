@@ -25,13 +25,23 @@ body {
 
 .people__person-details {
   justify-content: center;
-  margin: 0;
-  padding: 0;
   display: flex;
 }
 
 .people__person-details-extra {
-  display: none;
+  opacity: 0;
+  transition: all;
+  display: inline-block;
+  position: absolute;
+  bottom: -19.2px;
+}
+
+.people__person-details-extra-pay:before {
+  content: "$";
+}
+
+.people__person-details-extra-pay:after {
+  content: "M";
 }
 
 .people__person-details-name {
@@ -54,6 +64,10 @@ body {
   position: absolute;
   top: 84px;
   left: 158px;
+}
+
+.people__person:hover .people__person-details-extra {
+  opacity: 1;
 }
 
 img {
