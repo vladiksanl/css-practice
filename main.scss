@@ -1,1 +1,78 @@
+$font-family: Arial;
+body{
+    font-family: $font-family ;
+}
+body{
+    margin: 0;
+}
 
+    .people{
+    display: grid;
+
+    column-gap: 30px;
+    row-gap: 40px;
+
+    margin-top: 30px;
+    justify-content: center;
+        
+    grid-template-columns: repeat(2, 200px);
+    @media(min-width: 1000px){
+        grid-template-columns: repeat(4, 200px);
+    }
+    
+    &__person{
+    position: relative;
+    
+   
+    width: 200px;
+    height: 231px;
+   
+    
+    &-details{
+                
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        &-extra{
+           display: none;
+        }
+
+        &-name{
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(47, 79, 79, 1);
+            }
+        }
+
+        &-rank{
+
+            display: flex;        
+            justify-content: center; 
+            align-items: center;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+
+            background-color:rgba(255, 255, 255, 1);
+            color: rgba(139, 0, 0, 1);
+
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 50%;
+
+            top: 84px;
+            left: 158px;
+
+        }
+    }
+}
+img{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+
+}
