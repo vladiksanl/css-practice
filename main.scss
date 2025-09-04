@@ -16,6 +16,7 @@ body{
     justify-content: center;
         
     grid-template-columns: repeat(2, 200px);
+
     @media(min-width: 1000px){
         grid-template-columns: repeat(4, 200px);
     }
@@ -23,19 +24,29 @@ body{
     &__person{
     position: relative;
     
-   
     width: 200px;
     height: 231px;
-   
+
     
     &-details{
-                
+        
         display: flex;
         justify-content: center;
-        padding: 0;
-        margin: 0;
+        
         &-extra{
-           display: none;
+            position: absolute;
+            display: inline-block;
+            opacity: 0;
+            transition: 0s;
+            bottom: -19.2px;
+
+              &-pay::before{
+            content: "$";
+            }
+
+            &-pay::after{
+            content: "M";
+            }
         }
 
         &-name{
@@ -65,14 +76,20 @@ body{
             left: 158px;
 
         }
+    
+        &:hover .people__person-details-extra{
+           opacity: 1;
+        }
+
     }
-}
-img{
-    border-radius: 50%;
-    object-fit: cover;
-    width: 200px;
-    height: 200px;
-    margin: 0;
-    padding: 0;
 
 }
+
+        img{
+        border-radius: 50%;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        }
